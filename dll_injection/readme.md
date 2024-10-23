@@ -10,7 +10,7 @@ Why does this work? The DLL code is executed in the context of explorer.exe, a M
 
 Compile with following commands: 
 
-x86_64-w64-mingw32-gcc -o injector.exe injector.c -municode
+x86_64-w64-mingw32-gcc -o injector.exe injector.c -municode  
 x86_64-w64-mingw32-gcc -shared -o setuserfta.dll setuserfta.c -Wl,--subsystem,windows
 
 Next, run injector.exe, and the code from the DLL will be executed. To unload the DLL, simply restart explorer.exe.

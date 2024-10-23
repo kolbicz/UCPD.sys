@@ -9,4 +9,5 @@ As a result, this method is not suitable for most environments.
 compile with following commands: 
 
 x86_64-w64-mingw32-gcc -shared -o setuserfta.dll setuserfta.c -Wl,--subsystem,windows
+
 x86_64-w64-mingw32-gcc -o injector.exe injector.c -municode

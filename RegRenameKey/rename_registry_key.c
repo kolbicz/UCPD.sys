@@ -17,7 +17,7 @@ int wmain() {
     }
     wprintf(L"Successfully opened original key.\n");
     
-    // 2. Rename the key using RegRenameKey (requires at least Windows 10 version 1803)
+    // 2. Rename the key using RegRenameKey
     result = RegRenameKey(hKey, NULL, tempKeyName);
     if (result != ERROR_SUCCESS) {
         wprintf(L"Failed to rename key. Error code: %ld\n", result);

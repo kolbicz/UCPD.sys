@@ -31,6 +31,8 @@ LSTATUS RegRenameKey(<br>
   LPCWSTR lpNewKeyName<br>
 );
 
+https://learn.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regrenamekey
+
 The idea for this approach was originally suggested by @GHaslinger (thanks!), but I later found the same technique implemented in Mozilla’s source code:
 
 https://searchfox.org/mozilla-central/source/toolkit/mozapps/defaultagent/SetDefaultBrowser.cpp

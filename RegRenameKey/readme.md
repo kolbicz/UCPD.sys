@@ -13,7 +13,7 @@ Details:
 Before this change, it was possible to bypass UCPD.sys by renaming the parent key of a UserChoice key. This allowed unrestricted access without triggering any protection.
 
 The method involved renaming, for example, the https key to https1, and then writing the Hash value without interference.
-This worked because UCPD.sys validated only static registry paths, making it blind to renamed keys.
+This worked because UCPD.sys validates only static registry paths, making it blind to renamed keys.
 
 Attack flow in detail:
 

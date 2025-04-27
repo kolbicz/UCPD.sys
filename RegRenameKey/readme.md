@@ -25,10 +25,10 @@ Attack flow in detail:
 
 API definition:
 
-LSTATUS RegRenameKey(
-  HKEY    hKey,
-  LPCWSTR lpSubKeyName,
-  LPCWSTR lpNewKeyName
+LSTATUS RegRenameKey(<br>
+  HKEY    hKey,<br>
+  LPCWSTR lpSubKeyName,<br>
+  LPCWSTR lpNewKeyName<br>
 );
 
 The idea for this approach was originally suggested by @GHaslinger (thanks!), but I later found the same technique implemented in Mozilla’s source code:

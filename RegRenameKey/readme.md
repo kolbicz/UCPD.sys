@@ -5,7 +5,7 @@ Microsoft has actually patched this vulnerability quite some time ago.
 
 The code to block this attack has been present in UCPD.sys for several months, but it was not active until recently.
 
-With the release of KB5055627, Microsoft activated the UCPD_RENAME_ATTACK protection feature on Windows 11, causing this exploit to now fail.
+With the release of KB5055627, Microsoft activated the UCPD_RENAME_ATTACK protection feature on Windows 11, causing this attack to now fail.
 
 Details:
 ========

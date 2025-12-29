@@ -23,9 +23,8 @@ This PoC writes a .hta file to %TEMP% and executes it silently using mshta.exe.
 
 Alternatively, it's also possible to run mshta.exe without creating a temporary file s follows:
 
-wchar_t commandTemplate[] =
-    L"mshta.exe \"javascript:try{var s=new ActiveXObject('WScript.Shell');"
-    L"s.RegWrite('HKCU\\\\%s\\\\Hash','%s','REG_SZ');"
-    L"s.RegWrite('HKCU\\\\%s\\\\ProgId','%s','REG_SZ');"
+wchar_t commandTemplate[] =<br>
+    L"mshta.exe \"javascript:try{var s=new ActiveXObject('WScript.Shell');"<br>
+    L"s.RegWrite('HKCU\\\\%s\\\\Hash','%s','REG_SZ');"<br>
+    L"s.RegWrite('HKCU\\\\%s\\\\ProgId','%s','REG_SZ');"<br>
     L"close();}catch(e){alert('Error: '+e.message);close();}\"";
-

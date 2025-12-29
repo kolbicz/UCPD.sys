@@ -7,12 +7,12 @@ I hadn't expected that. Since the approach isn't particularly elegant and isn't 
 
 Recently, Microsoft enabled UCPD.sys dynamic rules and expanded the deny list to include mshta.exe, which makes this workaround obsolete.
 
-In any case, it was a relatively slow method, it briefly showed a window on the taskbar and momentarily stole focus.
+In any case, it was a relatively slow method, it briefly showed a window on the taskbar and momentarily stole focus (this is avoidable, however).
 
 Details:
 ========
 
-mmshta.exe is the Microsoft HTML Application Host. It can launch .hta (HTML Application) files, which can include embedded script (for example VBScript or JScript). 
+mshta.exe is the Microsoft HTML Application Host. It can launch .hta (HTML Application) files, which can include embedded script (for example VBScript or JScript). 
 Those scripts can then use Windows scripting interfaces (such as WScript / Windows Script Host or ActiveX/COM objects) to perform actions like reading/writing the registry.
 
 https://learn.microsoft.com/en-us/previous-versions/ms536495(v=vs.85)
@@ -28,3 +28,4 @@ wchar_t commandTemplate[] =<br>
     L"s.RegWrite('HKCU\\\\%s\\\\Hash','%s','REG_SZ');"<br>
     L"s.RegWrite('HKCU\\\\%s\\\\ProgId','%s','REG_SZ');"<br>
     L"close();}catch(e){alert('Error: '+e.message);close();}\"";
+

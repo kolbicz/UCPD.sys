@@ -17,14 +17,15 @@ Those scripts can then use Windows scripting interfaces (such as WScript / Windo
 
 https://learn.microsoft.com/en-us/previous-versions/ms536495(v=vs.85)
 
-Since UCPD.sys permits Microsoft-signed binaries, it was possible to write to (or delete) protected registry keys by leveraging mshta.exe - simply because it wasnt on the deny list at the time.
+Since UCPD.sys permits Microsoft-signed binaries, it was possible to write to (or delete) protected registry keys by leveraging mshta.exe - simply because it wasn't on the deny list at the time.
 
 This PoC writes a .hta file to %TEMP% and executes it silently using mshta.exe.
 
-Alternatively, its also possible to run mshta.exe without creating a temporary file s follows:
+Alternatively, it's also possible to run mshta.exe without creating a temporary file s follows:
 
 wchar_t commandTemplate[] =
     L"mshta.exe \"javascript:try{var s=new ActiveXObject('WScript.Shell');"
     L"s.RegWrite('HKCU\\\\%s\\\\Hash','%s','REG_SZ');"
     L"s.RegWrite('HKCU\\\\%s\\\\ProgId','%s','REG_SZ');"
     L"close();}catch(e){alert('Error: '+e.message);close();}\"";
+

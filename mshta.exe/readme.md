@@ -3,7 +3,7 @@ Simple PoC demonstrating an mshta.exe bypass of UCPD.sys
 
 This was the first public UCPD.sys bypass I released, and surprisingly, it remained effective for a long time.
 
-I hadnt expected that. Since the approach isnt particularly elegant and isnt very AV/EDR-friendly, I ultimately limited it to the Personal edition of SetUserFTA.
+I hadn't expected that. Since the approach isn't particularly elegant and isn't very AV/EDR-friendly, I ultimately limited it to the Personal edition of SetUserFTA.
 
 Recently, Microsoft enabled UCPD.sys dynamic rules and expanded the deny list to include mshta.exe, which makes this workaround obsolete.
 
@@ -17,11 +17,11 @@ Those scripts can then use Windows scripting interfaces (such as WScript / Windo
 
 https://learn.microsoft.com/en-us/previous-versions/ms536495(v=vs.85)
 
-Since UCPD.sys permits Microsoft-signed binaries, it was possible to write to (or delete) protected registry keys by leveraging mshta.exe  simply because it wasnt on the deny list at the time.
+Since UCPD.sys permits Microsoft-signed binaries, it was possible to write to (or delete) protected registry keys by leveraging mshta.exe - simply because it wasnt on the deny list at the time.
 
-This PoC writes a .hta file to %TEMP% and executes it silently using **mshta.exe**.
+This PoC writes a .hta file to %TEMP% and executes it silently using mshta.exe.
 
-Alternatively, its also possible to run mshta.exe without creating a temporary file, for example:
+Alternatively, its also possible to run mshta.exe without creating a temporary file s follows:
 
 wchar_t commandTemplate[] =
     L"mshta.exe \"javascript:try{var s=new ActiveXObject('WScript.Shell');"

